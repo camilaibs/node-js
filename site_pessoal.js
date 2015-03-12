@@ -1,9 +1,10 @@
 var http = require('http');
 var fs = require('fs');
+
 var server = http.createServer(function(request, response){
-// constante __dirname = diretório raiz
+	// __dirname = constante com o diretório raiz
 	fs.readFile(__dirname + '/index.html', function(erro, html){
-		response.writeHeader(200, {'Content-Type': 'text/html'});
+		response.writeHead(200, {'Content-Type': 'text/html'});
 		response.write(html);
 		response.end();
 	});
